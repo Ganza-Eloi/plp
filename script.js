@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginMessage.textContent = 'Login successful. Redirecting...';
         loginMessage.style.color = 'lightgreen';
         setTimeout(() => {
-          window.location.href = '/member.html';
+          window.location.href = './member.html';
         }, 400);
       } else {
         loginMessage.textContent = 'Invalid credentials. Use the allowed email and password.';

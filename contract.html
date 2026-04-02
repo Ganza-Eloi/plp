@@ -22,27 +22,23 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
       emailjs.init("5CGc5Ri_EPWY0QNay");
-const serviceID = " service_vhfep6d";
-const templateID = "template_m90e9la";
+const serviceID = "service_vhfep6d";
+const templateID = "template_xkf9d24";
 const recipientEmail = "ganzaeloi2010@gmail.com";
-        (function(){
-            emailjs.init('5CGc5Ri_EPWY0QNay'); // Replace with your EmailJS user ID
-        })();
-
-        function sendEmail(event) {
+     function sendEmail(event) {
             event.preventDefault();
             const templateParams = {
-                from_name: document.getElementById('name').value,
+                from_name: document.getElementById('fullName').value,
                 from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
             };
-                    emailjs.send('service_vhfep6d', 'template_m90e9la', templateParams)
+                    emailjs.send('service_vhfep6d', 'template_xkf9d24', templateParams)
                 .then(response => {
                     console.log('SUCCESS!', response.status, response.text);
                 }, error => {
                     console.log('FAILED...', error);
                 });
         }
+        
     </script>
    
     <style>
@@ -139,7 +135,7 @@ const recipientEmail = "ganzaeloi2010@gmail.com";
 
     </p>
     <p>
-        I, <label for="name"></label>
+        I,<label for="fullName"></label>
         <input id="fullname" name="parentname" type="text" required/>(Parent or Guardian name)
         allow my child to join PLP and promise to support him/her.
     </p>

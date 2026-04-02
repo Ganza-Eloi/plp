@@ -16,10 +16,31 @@
     <meta name="theme-color" content="#166fff">
     <meta name="msapplication-FileImage" content="images/favicon.png">
     <meta name="msapplication-FileColor" content="#166fff">
-    
+     <meta name="description" content="Contract form for PLP Urugwiro. Fill in details and submit to email." />
   
     <title>PLP Urugwiro - Contract Form</title>
-    <meta name="description" content="Contract form for PLP Urugwiro. Fill in details and submit to email." />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init('5CGc5Ri_EPWY0QNay'); // Replace with your EmailJS user ID
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+                    emailjs.send('service_vhfep6d', 'template_xkf9d24', templateParams)
+                .then(response => {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, error => {
+                    console.log('FAILED...', error);
+                });
+        }
+    </script>
+   
     <style>
       body { font-family: Arial, sans-serif; background:#f6f7fb; color:#273142; margin:0; padding:0; }
       .container { max-width: 760px; margin: 36px auto; background: #fff; border-radius: 8px; padding: 28px 32px; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
@@ -42,13 +63,8 @@
       <p class="info">Fill in the contract below and click Submit. Your contract will be emailed to the address configured under the form action.</p>
 
       <!-- Instructions: Replace the email in the action URL with your real recipient email. -->
-      <form name="contact" method="POST" netlify data-netlify="true" action="/success.html">
-  <input type="hidden" name="form-name" value="contact">
 
-
-        
-        
-
+    <form onsubmit="sendEmail(event)">
         <label for="fullName"></label>
         <p>I,<input id="fullName" name="fullName" type="text" required placeholder="Your name" /></p>
         <label for="email"></label>
@@ -136,5 +152,6 @@
       
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

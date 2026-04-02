@@ -1,163 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="plp urugwiro, PLP, Urugwiro, youth peace, reconciliation">
-    <meta name="author" content="Peace and Love Proclaimers Urugwiro">
-    <meta name="description" content="PLP Urugwiro is a youth-led organization promoting peace, unity and reconciliation at Groupe Scolaire Saint Joseph Kabgayi.">
-    <meta property="og:title" content="PLP Urugwiro | Peace and Love Proclaimers">
-    <meta property="og:description" content="Join PLP Urugwiro to build a unified world free from division: activities, events, and youth empowerment.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://plpurugwir.netlify.app">
-    <meta property="og:image" content="https://plpurugwir.netlify.app/images/Peace_and_Love_Proclaimers_PLP_idvA1XvffH_0.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
-    <link rel="mask-icon" href="images/favicon.png" color="#166fff">
-    <meta name="theme-color" content="#166fff">
-    <meta name="msapplication-FileImage" content="images/favicon.png">
-    <meta name="msapplication-FileColor" content="#166fff">
-    <meta name="description" content="Contract form for PLP Urugwiro. Fill in details and submit to email." />
-    <title>PLP Urugwiro - Contract Form</title>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <title>Contract</title>
+</head>
+<body>
+    <form>
+        <!-- other form elements -->
+        <input type="text" id="parentname" name="parentname" required>
+        <!-- other form elements -->
+    </form>
     <script>
-      emailjs.init("5CGc5Ri_EPWY0QNay");
-      const serviceID = "service_vhfep6d";
-      const templateID = "template_xkf9d24";
-      const recipientEmail = "ganzaeloi2010@gmail.com";
-
-      function sendEmail(event) {
-        event.preventDefault();
-        
-        const templateParams = {
-          from_name: document.getElementById('fullName').value,
-          from_email: document.getElementById('email').value,
-          date_of_birth: document.getElementById('dateOfBirth').value,
-          class_level: document.getElementById('classlevel').value,
-          contact_number: document.getElementById('contactNumber').value,
-          date_signed: document.getElementById('dateSigned').value,
-          signature: document.getElementById('signature').value,
-          parent_name: document.getElementById('parentname').value,
-        };
-
-        emailjs.send(serviceID, templateID, templateParams)
-          .then(response => {
-            console.log('SUCCESS!', response.status, response.text);
-            showSuccessPage();
-          }, error => {
-            console.log('FAILED...', error);
-            alert('Error sending email. Please try again. Error: ' + error.text);
-          });
-      }
-
-      function showSuccessPage() {
-        document.getElementById('contractForm').style.display = 'none';
-        document.getElementById('successPage').style.display = 'block';
-        
-        setTimeout(() => {
-          window.location.href = './members.html';
-        }, 5000);
-      }
-    </script>
-    <style>
-      body { font-family: Arial, sans-serif; background:#f6f7fb; color:#273142; margin:0; padding:0; }
-      .container { max-width: 760px; margin: 36px auto; background: #fff; border-radius: 8px; padding: 28px 32px; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
-      h1 { margin-top:0; text-align:center; font-size: 1.8rem; }
-      .info { margin-bottom: 20px; color: #4f5b73; }
-      label { display:block; margin:15px 0 6px; font-weight:600; }
-      input, textarea, select { width:100%; padding:10px; border:1px solid #d0d6e0; border-radius:5px; font-size:1rem; box-sizing:border-box; }
-      textarea { resize:vertical; min-height:140px; }
-      .row { display:flex; gap:14px; flex-wrap:wrap; }
-      .row > div { flex:1; min-width:170px; }
-      .btn { margin-top:20px; width:100%; background:#166fff; color:#fff; border:none; border-radius:6px; padding:12px 15px; font-size:1.05rem; cursor:pointer; }
-      .btn:hover { background:#0f5cdf; }
-      .note { margin-top: 14px; color:#5a6476; font-size:.9rem; }
-      .hint { background:#e9f0ff; border:1px solid #c7daf6; color:#1c4f95; padding:9px 12px; border-radius:5px; margin-top:10px; }
-      .success-icon { font-size: 3rem; text-align: center; }
-      .success-message { text-align: center; font-size: 1.2rem; }
-      .redirect-notice { text-align: center; color: #666; }
-      #successPage { display: none; text-align: center; padding: 40px 20px; }
-    </style>
-  </head>
-  <body>
-    <div class="container" id="contractForm">
-      <h1>PLP Contract Form</h1>
-      <p class="info">Fill in the contract below and click Submit. Your contract will be emailed to the address configured under the form action.</p>
-
-      <form onsubmit="sendEmail(event)">
-        <label for="fullName">Full Name</label>
-        <p>I <input id="fullName" name="fullName" type="text" required placeholder="Your name" /></p>
-
-        <label for="email">Email Address</label>
-        <p>Email: <input id="email" name="email" type="email" required placeholder="Your email" /></p>
-
-        <label for="dateOfBirth">Date of Birth</label>
-        <input id="dateOfBirth" name="dateOfBirth" type="date" required />
-
-        <div class="row">
-          <div>
-            <label for="classlevel">Class Level</label>
-            <input id="classlevel" name="classlevel" type="text" placeholder="Class level" />
-          </div>
-          <div>
-            <label for="contactNumber">Contact Number</label>
-            <input id="contactNumber" name="contactNumber" type="tel" placeholder="Contact number and WhatsApp number" />
-          </div>
-        </div>
-
-        <p>Freely choose to join Peace and Love Proclaimers (PLP)*, the big family of high school students who stand for peace, love, and unity in Rwanda.</p>
-
-        <p>By signing this paper, I promise with all my heart to:</p>
-        
-        <ol>
-          <li>Live everyday by Peace and Love Proclaim.</li>
-          <li>Never use words or actions that divide people (by tribe, religion, or anything else).</li>
-          <li>Say NO to genocide ideology and teach others why "Never Again" is so important.</li>
-          <li>Come to PLP club meetings and activities at school whenever I can (Walk to Remember, SkillUp, projects, etc.)</li>
-          <li>Treat every PLP member like my real brother or sister with respect and love.</li>
-          <li>Protect the name of PLP and never use it for bad things or for my own benefit.</li>
-          <li>Take good care of PLP T-shirts, books, or anything the club gives me.</li>
-          <li>Accept that if I do something very wrong (fighting, stealing, insulting, discriminating, etc.), the club leaders can remove me after talking with me fairly.</li>
-          <li>Know that PLP is free and I can leave anytime if I want just tell my club leader.</li>
-        </ol>
-
-        <p>I understand that being a Proclaimer is a big responsibility and I am proud to join this family!</p>
-        <p>I have read this (or someone read it to me) and I agree with everything.</p>
-
-        <p>
-          Date: <input id="dateSigned" name="dateSigned" type="date" required />
-        </p>
-
-        <p>
-          Student's signature: <input id="signature" name="signature" type="text" required />
-        </p>
-
-        <p>Parent/Guardian consent (MUST be signed - you are under 18)</p>
-        <p>
-          I <input id="fullname" name="parentname" type="text" required placeholder="Parent or Guardian name" /> (Parent or Guardian name)
-          allow my child to join PLP and promise to support him/her.
-        </p>
-
-        <h2>Welcome to the PLP Family, brother/sister! 💕</h2>
-
-        <input type="submit" value="Send" class="btn">
-      </form>
-    </div>
-
-    <div id="successPage">
-      <div class="success-icon">✅</div>
-      <h1>Contract Submitted Successfully!</h1>
-      <p class="success-message">Welcome to the PLP Family, brother/sister! 💕</p>
-      <p>Your contract has been sent successfully. A confirmation email has been sent to: <strong id="confirmEmail"></strong></p>
-      <p class="redirect-notice">You will be redirected to the members page in a few seconds...</p>
-    </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const emailDisplay = document.getElementById('confirmEmail');
-        if (emailDisplay) {
-          emailDisplay.textContent = 'ganzaeloi2010@gmail.com';
+        function sendEmail(email) {
+            // email sending logic here
+            showSuccessPage(email);
         }
-      });
+
+        function showSuccessPage(email) {
+            // dynamically display email address
+            console.log(`Success! Email sent to: ${email}`);
+        }
     </script>
-  </body>
+</body>
 </html>

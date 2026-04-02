@@ -19,27 +19,48 @@
      <meta name="description" content="Contract form for PLP Urugwiro. Fill in details and submit to email." />
   
     <title>PLP Urugwiro - Contract Form</title>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      emailjs.init("5CGc5Ri_EPWY0QNay");
-const serviceID = "service_vhfep6d";
-const templateID = "template_xkf9d24";
-const recipientEmail = "ganzaeloi2010@gmail.com";
-     function sendEmail(event) {
-            event.preventDefault();
-            const templateParams = {
-                from_name: document.getElementById('fullName').value,
-                from_email: document.getElementById('email').value,
-            };
-                    emailjs.send('service_vhfep6d', 'template_xkf9d24', templateParams)
-                .then(response => {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, error => {
-                    console.log('FAILED...', error);
-                });
-        }
-        
-    </script>
+    ‎    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+‎    <script>
+‎      emailjs.init("5CGc5Ri_EPWY0QNay");
+‎      const serviceID = "service_vhfep6d";
+‎      const templateID = "template_xkf9d24";
+‎      const recipientEmail = "ganzaeloi2010@gmail.com";
+‎
+‎      function sendEmail(event) {
+‎        event.preventDefault();
+‎        
+‎        const templateParams = {
+‎          from_name: document.getElementById('fullName').value,
+‎          from_email: document.getElementById('email').value,
+‎          date_of_birth: document.getElementById('dateOfBirth').value,
+‎          class_level: document.getElementById('classlevel').value,
+‎          contact_number: document.getElementById('contactNumber').value,
+‎          date_signed: document.getElementById('dateSigned').value,
+‎          signature: document.getElementById('signature').value,
+‎          parent_name: document.getElementById('parentname').value,
+‎        };
+‎
+‎        emailjs.send(serviceID, templateID, templateParams)
+‎          .then(response => {
+‎            console.log('SUCCESS!', response.status, response.text);
+‎            showSuccessPage();
+‎          }, error => {
+‎            console.log('FAILED...', error);
+‎            alert('Error sending email. Please try again. Error: ' + error.text);
+‎          });
+‎      }
+‎
+‎      function showSuccessPage() {
+‎        document.getElementById('contractForm').style.display = 'none';
+‎        document.getElementById('successPage').style.display = 'block';
+‎        
+‎        // Redirect to member page after 5 seconds
+‎        setTimeout(() => {
+‎          window.location.href = '.members.html'; // Change to your actual members page URL
+‎        }, 5000);
+‎      }
+‎    </script>
+    
    
     <style>
       body { font-family: Arial, sans-serif; background:#f6f7fb; color:#273142; margin:0; padding:0; }
@@ -152,6 +173,23 @@ const recipientEmail = "ganzaeloi2010@gmail.com";
       
       </form>
     </div>
-  
+  <div id="successPage">
+‎        <div class="success-icon">✅</div>
+‎        <h1>Contract Submitted Successfully!</h1>
+‎        <p class="success-message">Welcome to the PLP Family, brother/sister! 💕</p>
+‎        <p>Your contract has been sent successfully. A confirmation email has been sent to: <strong id="confirmEmail"></strong></p>
+‎        <p class="redirect-notice">You will be redirected to the members page in a few seconds...</p>
+‎      </div>
+‎    </div>
+‎
+‎    <script>
+‎      // Display the email in success page
+‎      document.addEventListener('DOMContentLoaded', function() {
+‎        const emailDisplay = document.getElementById('confirmEmail');
+‎        if (emailDisplay) {
+‎          emailDisplay.textContent = 'ganzaeloi2010@gmail.com';
+‎        }
+‎      });
+‎    </script>
   </body>
 </html>

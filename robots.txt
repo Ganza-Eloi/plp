@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://plpurugwir.netlify.app/sitemap.xml

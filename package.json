@@ -1,0 +1,12 @@
+{
+  "name": "plp-urugwiro-backend",
+  "version": "1.0.0",
+  "description": "Backend service for the Peace and Love Proclaimers Urugwiro site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -48,7 +48,7 @@ body {
 
 .header_container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
 }

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const loginMessage = document.getElementById('loginMessage');
 
-  const allowedEmail = 'plpurugwiro@gmail.com', 'ganzaeloi2010@gmail.com';
+  const allowedEmail = 'plpurugwiro@gmail.com';
   const allowedPassword = 'urugwiro';
 
   if (loginForm) {

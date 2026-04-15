@@ -26,3 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+const music = 
+                            document.getElementById("bgMusic");
+                            document.addEventListener("click", () => {
+                                music.play();
+                            }, {once: true});

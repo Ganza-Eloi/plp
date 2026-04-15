@@ -1,0 +1,20 @@
+{
+    "name": "PLP Urugwiro",
+    "short_name":"Urugwiro",
+    "start_url":"/",
+    "display":"standalone",
+    "background_color":"#000000",
+    "theme_color":"#000000",
+    "icons":[
+        {
+            "src":"/Peace_and_Love_Proclaimers_PLP_idvA1XvffH_0.png",
+            "sizes":"192*192",
+            "type":"image/png"
+        },
+        {
+            "src":"/Peace_and_Love_Proclaimers_PLP_idvA1XvffH_0.png",
+            "sizes":"512*512",
+            "type":"image/png"
+        }
+    ]
+}

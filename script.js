@@ -31,3 +31,12 @@ const music =
                             document.addEventListener("click", () => {
                                 music.play();
                             }, {once: true});
+    
+         window.addEventListener("load", () => {
+             if ("serviceWorker" in navigator) {
+                 navigator.serviceWorker.register("/service-worker.js")
+                 .then(() => console.log("Service Worker Registered"))
+                 .catch(err => console.log("SW Error:", err));
+             }
+         });
+     

@@ -5,14 +5,15 @@
     "display":"standalone",
     "background_color":"#000000",
     "theme_color":"#000000",
+    "orientation":"portrait",
     "icons":[
         {
-            "src":"/Peace_and_Love_Proclaimers_PLP_idvA1XvffH_0.png",
+            "src":"/images/favicon.png",
             "sizes":"192*192",
             "type":"image/png"
         },
         {
-            "src":"/Peace_and_Love_Proclaimers_PLP_idvA1XvffH_0.png",
+            "src":"/images/favicon.png",
             "sizes":"512*512",
             "type":"image/png"
         }

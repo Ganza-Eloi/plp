@@ -404,3 +404,26 @@ body a{
   background: var(--dark);
   color: var(--white);
 }
+
+.gallery_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery_item img {
+
+  border-radius: 12px;
+  display: block;
+}
+.video_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 70px;
+}
+
+.video_item  {
+
+  border-radius: 12px;
+  display: block;
+}

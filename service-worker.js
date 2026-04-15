@@ -1,4 +1,4 @@
-const CACHE_NAME ="Urugwiro-cache-v1";
+const CACHE_NAME ="saintjosephplp-cache-v1";
 
 const urlsToCache = [
          "/",

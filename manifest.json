@@ -18,11 +18,5 @@
             "type":"image/png"
         }
     ]
-    "screenshots": [
-        { 
-            "src":"/images/favicon.png",
-            "sizes":"750x1334",
-            "type":"image/png"
-        }
-    ]
+
 }

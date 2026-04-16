@@ -32,11 +32,12 @@ const music =
                                 music.play();
                             }, {once: true});
     
-         window.addEventListener("load", () => {
-             if ("serviceWorker" in navigator) {
-                 navigator.serviceWorker.register("/service-worker.js")
-                 .then(() => console.log("Service Worker Registered"))
-                 .catch(err => console.log("SW Error:", err));
-             }
-         });
+         if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js")
+    .then(reg => console.log("SW Registered:", reg.scope))
+    .catch(err => console.log("SW Error:", err));
+}
+self.addEventListener("activate", event => {
+  event.waitUntil(self.clients.claim());
+});
      

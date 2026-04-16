@@ -32,12 +32,9 @@ const music =
                                 music.play();
                             }, {once: true});
     
-         if ("serviceWorker" in navigator) {
+         // SAFE SERVICE WORKER REGISTER (FIXED)
+if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js")
-    .then(reg => console.log("SW Registered:", reg.scope))
-    .catch(err => console.log("SW Error:", err));
+    .then(reg => console.log("SW OK:", reg.scope))
+    .catch(err => console.log("SW ERROR:", err));
 }
-self.addEventListener("activate", event => {
-  event.waitUntil(self.clients.claim());
-});
-     

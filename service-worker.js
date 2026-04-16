@@ -5,8 +5,8 @@ const urlsToCache = [
          "/index.html",
          "/style.css",
          "/script.js",
-         "/images/favicon.png",
-         "/images/favicon.png"
+         "/images/icon-192.png",
+         "/images/icon-512.png"
          ];
 self.addEventListener("install", event => {
          event.waitUntil(
